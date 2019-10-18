@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Sitesma de cadastro utilizando firebase  e react.js**
+o webApp foi desenvolvido utilizando os recursos do real Database e authentication, do firebase.
+Onde é possível cadastrar um usário e o mesmo popular uma tabela de registro ponto de trabalho.
 
-## Available Scripts
+o webApp possui:
+	*Tela de Login
+	*Tela de cadastro
+	*painel de registro de ponto
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Divisão do projeto.
+Dividiu-se o projeto em 3 etapas
+1º_  Estrutura da tabala e como ela comunica com o usuário logado
+2º_ Desenvolvimendo de telas lOGIN/CADASTRO/painel
+3º_ Estilização, autentificação e validações;
 
-### `yarn test`
+## Tela Login 
+	O sistema possui uma tela de login para acessar o painel admin, onde é necéssário fazer um cadastro para  proseguir.
+	Quando o usuário é logado, é regrado um Token no localStorage do navegor, onde o mesmo serve para autenticar o usuário logado enquanto o mesmo está regitrando seu ponto.
+	Após deslogar, o Token é removido, e encerra-se a comunicação do usuário com o firebase e consquentimente com a tabela de registro em questão.
+	
+## Tela Cadastro
+	Input de email e senha, depois o usuário é redirecionado par a tela de login.
+	Após o cadastro, em tempo real, é criada uma tabela utilizando um identificador do usuário
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Painel admin
+	Desenvolveu-se um pequeno painel parao usuário inserir os dados de registro como:
+		Entrada, Saída para o almoço, Retorno do Almoço e Sáida do trabalho.
+	Só é possível fazer um cadastro por dia, para evitar registros com datas duplicadas.
+	
+## Comunicação 
+	A comunicação é feita com a dataBase em tempo real do firebase
